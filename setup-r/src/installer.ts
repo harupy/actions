@@ -150,6 +150,7 @@ async function acquireRUbuntu(version: string): Promise<string> {
 
   try {
     // Important backports needed for CRAN packages, including libgit2
+    await exec.exec("echo foo");
     await exec.exec(
       "sudo DEBIAN_FRONTEND=noninteractive add-apt-repository -y ppa:cran/travis || true"
     );
